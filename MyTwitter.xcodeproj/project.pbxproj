@@ -19,6 +19,8 @@
 		151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13F92A49B73700CB6011 /* SearchView.swift */; };
 		151A13FC2A49B74000CB6011 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13FB2A49B74000CB6011 /* NotificationView.swift */; };
 		151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13FD2A49B74700CB6011 /* MessageView.swift */; };
+		151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14002A49D5CE00CB6011 /* CreateTweetView.swift */; };
+		151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14032A49DB0200CB6011 /* MultilineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		151A13F92A49B73700CB6011 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		151A13FB2A49B74000CB6011 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		151A13FD2A49B74700CB6011 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		151A14002A49D5CE00CB6011 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
+		151A14032A49DB0200CB6011 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		151A13E82A49B28400CB6011 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				151A14022A49DAEE00CB6011 /* Components */,
+				151A13FF2A49D5BF00CB6011 /* Post */,
 				151A13F42A49B71A00CB6011 /* Message */,
 				151A13F32A49B71400CB6011 /* Notification */,
 				151A13F22A49B70C00CB6011 /* Search */,
@@ -230,6 +236,22 @@
 				151A13FD2A49B74700CB6011 /* MessageView.swift */,
 			);
 			path = Message;
+			sourceTree = "<group>";
+		};
+		151A13FF2A49D5BF00CB6011 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				151A14002A49D5CE00CB6011 /* CreateTweetView.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		151A14022A49DAEE00CB6011 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				151A14032A49DB0200CB6011 /* MultilineTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,11 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */,
 				151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */,
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
 				151A13C02A49AC9B00CB6011 /* ContentView.swift in Sources */,
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
+				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,
 				151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */,
 				151A13FC2A49B74000CB6011 /* NotificationView.swift in Sources */,
 			);
