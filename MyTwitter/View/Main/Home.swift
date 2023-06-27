@@ -61,7 +61,7 @@ extension Home {
                     self.selectedIndex = 0
                 }
                 .tabItem {
-                    Image(systemName: "house")
+                    Label("Home", systemImage: "house")
                 }
                 .tag(0)
             
@@ -70,7 +70,7 @@ extension Home {
                     self.selectedIndex = 1
                 }
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Label("Search", systemImage: "magnifyingglass")
                 }
                 .tag(1)
             
@@ -79,7 +79,7 @@ extension Home {
                     self.selectedIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "bell")
+                    Label("Notification", systemImage: "bell")
                 }
                 .tag(2)
             
@@ -88,7 +88,7 @@ extension Home {
                     self.selectedIndex = 3
                 }
                 .tabItem {
-                    Image(systemName: "paperplane.fill")
+                    Label("Message", systemImage: "paperplane.fill")
                 }
                 .tag(3)
         }
