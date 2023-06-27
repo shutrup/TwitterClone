@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MessageView: View {
     var body: some View {
-        Text("Message")
+        VStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(0..<20, id: \.self) { noty in
+                    MessageCellView()
+                }
+            }
+        }
     }
 }
 

@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct NotificationCellView: View {
-    @State var width = UIScreen.main.bounds.width
     
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: width, height: 1, alignment: .center)
-                .foregroundColor(.gray)
-                .opacity(0.3)
+            CustomDivider()
             
             HStack(alignment: .top) {
                 Image(systemName: "person.fill")

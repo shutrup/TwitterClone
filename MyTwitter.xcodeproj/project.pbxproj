@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13BD2A49AC9B00CB6011 /* MyTwitterApp.swift */; };
-		151A13C02A49AC9B00CB6011 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13BF2A49AC9B00CB6011 /* ContentView.swift */; };
 		151A13C22A49AC9D00CB6011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151A13C12A49AC9D00CB6011 /* Assets.xcassets */; };
 		151A13C62A49AC9D00CB6011 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151A13C52A49AC9D00CB6011 /* Preview Assets.xcassets */; };
 		151A13D02A49AC9D00CB6011 /* MyTwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13CF2A49AC9D00CB6011 /* MyTwitterTests.swift */; };
@@ -28,6 +27,10 @@
 		151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14112A4B2AE400CB6011 /* SearchUserCellView.swift */; };
 		151A14142A4B2DE300CB6011 /* UIApplication + Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14132A4B2DE300CB6011 /* UIApplication + Exts.swift */; };
 		151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14152A4B309D00CB6011 /* NotificationCellView.swift */; };
+		151A14182A4B651C00CB6011 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14172A4B651C00CB6011 /* MessageCellView.swift */; };
+		151A141A2A4B68BF00CB6011 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14192A4B68BF00CB6011 /* TopBar.swift */; };
+		151A141C2A4B69F300CB6011 /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A141B2A4B69F300CB6011 /* CustomDivider.swift */; };
+		151A141E2A4B6A9C00CB6011 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A141D2A4B6A9C00CB6011 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,6 @@
 /* Begin PBXFileReference section */
 		151A13BA2A49AC9B00CB6011 /* MyTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		151A13BD2A49AC9B00CB6011 /* MyTwitterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTwitterApp.swift; sourceTree = "<group>"; };
-		151A13BF2A49AC9B00CB6011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		151A13C12A49AC9D00CB6011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		151A13C32A49AC9D00CB6011 /* MyTwitter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTwitter.entitlements; sourceTree = "<group>"; };
 		151A13C52A49AC9D00CB6011 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -73,6 +75,10 @@
 		151A14112A4B2AE400CB6011 /* SearchUserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCellView.swift; sourceTree = "<group>"; };
 		151A14132A4B2DE300CB6011 /* UIApplication + Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Exts.swift"; sourceTree = "<group>"; };
 		151A14152A4B309D00CB6011 /* NotificationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellView.swift; sourceTree = "<group>"; };
+		151A14172A4B651C00CB6011 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		151A14192A4B68BF00CB6011 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		151A141B2A4B69F300CB6011 /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
+		151A141D2A4B6A9C00CB6011 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +136,6 @@
 				151A13E92A49B28700CB6011 /* ViewModel */,
 				151A13E82A49B28400CB6011 /* View */,
 				151A13BD2A49AC9B00CB6011 /* MyTwitterApp.swift */,
-				151A13BF2A49AC9B00CB6011 /* ContentView.swift */,
 				151A13C12A49AC9D00CB6011 /* Assets.xcassets */,
 				151A13C32A49AC9D00CB6011 /* MyTwitter.entitlements */,
 				151A13C42A49AC9D00CB6011 /* Preview Content */,
@@ -167,12 +172,12 @@
 			isa = PBXGroup;
 			children = (
 				151A14022A49DAEE00CB6011 /* Components */,
-				151A13FF2A49D5BF00CB6011 /* Post */,
-				151A13F42A49B71A00CB6011 /* Message */,
-				151A13F32A49B71400CB6011 /* Notification */,
-				151A13F22A49B70C00CB6011 /* Search */,
 				151A13F12A49B70900CB6011 /* Feed */,
 				151A13EE2A49B3D600CB6011 /* Main */,
+				151A13F42A49B71A00CB6011 /* Message */,
+				151A13F32A49B71400CB6011 /* Notification */,
+				151A13FF2A49D5BF00CB6011 /* Post */,
+				151A13F22A49B70C00CB6011 /* Search */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				151A13EF2A49B3E300CB6011 /* Home.swift */,
+				151A14192A4B68BF00CB6011 /* TopBar.swift */,
+				151A141D2A4B6A9C00CB6011 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				151A13FD2A49B74700CB6011 /* MessageView.swift */,
+				151A14172A4B651C00CB6011 /* MessageCellView.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 				151A14032A49DB0200CB6011 /* MultilineTextField.swift */,
 				151A14072A4AF1AB00CB6011 /* TweetButton.swift */,
 				151A140F2A4B0D8B00CB6011 /* SearchBar.swift */,
+				151A141B2A4B69F300CB6011 /* CustomDivider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -405,7 +414,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151A141C2A4B69F300CB6011 /* CustomDivider.swift in Sources */,
 				151A14102A4B0D8B00CB6011 /* SearchBar.swift in Sources */,
+				151A141A2A4B68BF00CB6011 /* TopBar.swift in Sources */,
+				151A14182A4B651C00CB6011 /* MessageCellView.swift in Sources */,
 				151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */,
 				151A140A2A4AFCFC00CB6011 /* SearchCellView.swift in Sources */,
 				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
@@ -415,7 +427,7 @@
 				151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */,
 				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
-				151A13C02A49AC9B00CB6011 /* ContentView.swift in Sources */,
+				151A141E2A4B6A9C00CB6011 /* MainView.swift in Sources */,
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
 				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,
