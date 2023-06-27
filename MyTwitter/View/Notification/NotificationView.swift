@@ -9,7 +9,13 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Notification")
+        VStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(0..<20, id: \.self) { noty in
+                    NotificationCellView()
+                }
+            }
+        }
     }
 }
 

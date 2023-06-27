@@ -27,6 +27,7 @@
 		151A14102A4B0D8B00CB6011 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A140F2A4B0D8B00CB6011 /* SearchBar.swift */; };
 		151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14112A4B2AE400CB6011 /* SearchUserCellView.swift */; };
 		151A14142A4B2DE300CB6011 /* UIApplication + Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14132A4B2DE300CB6011 /* UIApplication + Exts.swift */; };
+		151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14152A4B309D00CB6011 /* NotificationCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		151A140F2A4B0D8B00CB6011 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		151A14112A4B2AE400CB6011 /* SearchUserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCellView.swift; sourceTree = "<group>"; };
 		151A14132A4B2DE300CB6011 /* UIApplication + Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Exts.swift"; sourceTree = "<group>"; };
+		151A14152A4B309D00CB6011 /* NotificationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				151A13FB2A49B74000CB6011 /* NotificationView.swift */,
+				151A14152A4B309D00CB6011 /* NotificationCellView.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */,
 				151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */,
 				151A14142A4B2DE300CB6011 /* UIApplication + Exts.swift in Sources */,
+				151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */,
 				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
 				151A13C02A49AC9B00CB6011 /* ContentView.swift in Sources */,
