@@ -21,6 +21,8 @@
 		151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A13FD2A49B74700CB6011 /* MessageView.swift */; };
 		151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14002A49D5CE00CB6011 /* CreateTweetView.swift */; };
 		151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14032A49DB0200CB6011 /* MultilineTextField.swift */; };
+		151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14052A4AEAC800CB6011 /* TweetCellView.swift */; };
+		151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14072A4AF1AB00CB6011 /* TweetButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		151A13FD2A49B74700CB6011 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		151A14002A49D5CE00CB6011 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
 		151A14032A49DB0200CB6011 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		151A14052A4AEAC800CB6011 /* TweetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellView.swift; sourceTree = "<group>"; };
+		151A14072A4AF1AB00CB6011 /* TweetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				151A13F52A49B72400CB6011 /* FeedView.swift */,
+				151A14052A4AEAC800CB6011 /* TweetCellView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				151A14032A49DB0200CB6011 /* MultilineTextField.swift */,
+				151A14072A4AF1AB00CB6011 /* TweetButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -384,8 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
 				151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */,
 				151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */,
+				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
 				151A13C02A49AC9B00CB6011 /* ContentView.swift in Sources */,
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
