@@ -31,6 +31,10 @@
 		151A141A2A4B68BF00CB6011 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14192A4B68BF00CB6011 /* TopBar.swift */; };
 		151A141C2A4B69F300CB6011 /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A141B2A4B69F300CB6011 /* CustomDivider.swift */; };
 		151A141E2A4B6A9C00CB6011 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A141D2A4B6A9C00CB6011 /* MainView.swift */; };
+		151A14202A4B6B3A00CB6011 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A141F2A4B6B3A00CB6011 /* SlideMenu.swift */; };
+		151A14242A4C2A9F00CB6011 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14232A4C2A9F00CB6011 /* FollowView.swift */; };
+		151A14262A4C2D5C00CB6011 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14252A4C2D5C00CB6011 /* MenuButton.swift */; };
+		151A14282A4C314000CB6011 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14272A4C314000CB6011 /* MenuButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		151A14192A4B68BF00CB6011 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		151A141B2A4B69F300CB6011 /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		151A141D2A4B6A9C00CB6011 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		151A141F2A4B6B3A00CB6011 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
+		151A14232A4C2A9F00CB6011 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
+		151A14252A4C2D5C00CB6011 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		151A14272A4C314000CB6011 /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,7 @@
 		151A13EA2A49B28A00CB6011 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				151A14272A4C314000CB6011 /* MenuButtons.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 				151A13EF2A49B3E300CB6011 /* Home.swift */,
 				151A14192A4B68BF00CB6011 /* TopBar.swift */,
 				151A141D2A4B6A9C00CB6011 /* MainView.swift */,
+				151A141F2A4B6B3A00CB6011 /* SlideMenu.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 				151A14072A4AF1AB00CB6011 /* TweetButton.swift */,
 				151A140F2A4B0D8B00CB6011 /* SearchBar.swift */,
 				151A141B2A4B69F300CB6011 /* CustomDivider.swift */,
+				151A14232A4C2A9F00CB6011 /* FollowView.swift */,
+				151A14252A4C2D5C00CB6011 /* MenuButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -414,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151A14282A4C314000CB6011 /* MenuButtons.swift in Sources */,
 				151A141C2A4B69F300CB6011 /* CustomDivider.swift in Sources */,
 				151A14102A4B0D8B00CB6011 /* SearchBar.swift in Sources */,
 				151A141A2A4B68BF00CB6011 /* TopBar.swift in Sources */,
@@ -421,8 +434,10 @@
 				151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */,
 				151A140A2A4AFCFC00CB6011 /* SearchCellView.swift in Sources */,
 				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
+				151A14202A4B6B3A00CB6011 /* SlideMenu.swift in Sources */,
 				151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */,
 				151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */,
+				151A14242A4C2A9F00CB6011 /* FollowView.swift in Sources */,
 				151A14142A4B2DE300CB6011 /* UIApplication + Exts.swift in Sources */,
 				151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */,
 				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
@@ -431,6 +446,7 @@
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
 				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,
+				151A14262A4C2D5C00CB6011 /* MenuButton.swift in Sources */,
 				151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */,
 				151A13FC2A49B74000CB6011 /* NotificationView.swift in Sources */,
 			);

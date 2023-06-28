@@ -60,6 +60,7 @@ extension Home {
                 .onTapGesture {
                     self.selectedIndex = 0
                 }
+                .navigationBarHidden(true)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -69,6 +70,7 @@ extension Home {
                 .onTapGesture {
                     self.selectedIndex = 1
                 }
+                .navigationBarHidden(true)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
@@ -78,6 +80,7 @@ extension Home {
                 .onTapGesture {
                     self.selectedIndex = 2
                 }
+                .navigationBarHidden(true)
                 .tabItem {
                     Label("Notification", systemImage: "bell")
                 }
@@ -87,6 +90,7 @@ extension Home {
                 .onTapGesture {
                     self.selectedIndex = 3
                 }
+                .navigationBarHidden(true)
                 .tabItem {
                     Label("Message", systemImage: "paperplane.fill")
                 }
