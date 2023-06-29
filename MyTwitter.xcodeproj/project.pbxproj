@@ -35,6 +35,10 @@
 		151A14242A4C2A9F00CB6011 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14232A4C2A9F00CB6011 /* FollowView.swift */; };
 		151A14262A4C2D5C00CB6011 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14252A4C2D5C00CB6011 /* MenuButton.swift */; };
 		151A14282A4C314000CB6011 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14272A4C314000CB6011 /* MenuButtons.swift */; };
+		151A142D2A4DCCE800CB6011 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A142C2A4DCCE800CB6011 /* UserProfile.swift */; };
+		151A142F2A4DCFB000CB6011 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A142E2A4DCFB000CB6011 /* BlurView.swift */; };
+		151A14312A4DFCE400CB6011 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14302A4DFCE400CB6011 /* TabButton.swift */; };
+		151A14332A4E079100CB6011 /* View + Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14322A4E079100CB6011 /* View + Exts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		151A14232A4C2A9F00CB6011 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
 		151A14252A4C2D5C00CB6011 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		151A14272A4C314000CB6011 /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
+		151A142C2A4DCCE800CB6011 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		151A142E2A4DCFB000CB6011 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		151A14302A4DFCE400CB6011 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		151A14322A4E079100CB6011 /* View + Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Exts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 		151A13E82A49B28400CB6011 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				151A14292A4DCCD100CB6011 /* Proflle */,
 				151A14022A49DAEE00CB6011 /* Components */,
 				151A13F12A49B70900CB6011 /* Feed */,
 				151A13EE2A49B3D600CB6011 /* Main */,
@@ -216,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				151A14132A4B2DE300CB6011 /* UIApplication + Exts.swift */,
+				151A14322A4E079100CB6011 /* View + Exts.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -292,8 +302,18 @@
 				151A141B2A4B69F300CB6011 /* CustomDivider.swift */,
 				151A14232A4C2A9F00CB6011 /* FollowView.swift */,
 				151A14252A4C2D5C00CB6011 /* MenuButton.swift */,
+				151A142E2A4DCFB000CB6011 /* BlurView.swift */,
+				151A14302A4DFCE400CB6011 /* TabButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		151A14292A4DCCD100CB6011 /* Proflle */ = {
+			isa = PBXGroup;
+			children = (
+				151A142C2A4DCCE800CB6011 /* UserProfile.swift */,
+			);
+			path = Proflle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,9 +455,11 @@
 				151A140A2A4AFCFC00CB6011 /* SearchCellView.swift in Sources */,
 				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
 				151A14202A4B6B3A00CB6011 /* SlideMenu.swift in Sources */,
+				151A14312A4DFCE400CB6011 /* TabButton.swift in Sources */,
 				151A14012A49D5CE00CB6011 /* CreateTweetView.swift in Sources */,
 				151A13FA2A49B73700CB6011 /* SearchView.swift in Sources */,
 				151A14242A4C2A9F00CB6011 /* FollowView.swift in Sources */,
+				151A142F2A4DCFB000CB6011 /* BlurView.swift in Sources */,
 				151A14142A4B2DE300CB6011 /* UIApplication + Exts.swift in Sources */,
 				151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */,
 				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
@@ -446,6 +468,8 @@
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
 				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,
+				151A142D2A4DCCE800CB6011 /* UserProfile.swift in Sources */,
+				151A14332A4E079100CB6011 /* View + Exts.swift in Sources */,
 				151A14262A4C2D5C00CB6011 /* MenuButton.swift in Sources */,
 				151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */,
 				151A13FC2A49B74000CB6011 /* NotificationView.swift in Sources */,
