@@ -27,7 +27,7 @@ struct WelcomeView: View {
                 
                 createAccountButton
                 
-                privacy
+                privacyAndLogin
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")
@@ -104,7 +104,7 @@ extension WelcomeView {
         }
         .padding(.bottom)
     }
-    private var privacy: some View {
+    private var privacyAndLogin: some View {
         VStack(alignment: .leading) {
             VStack {
                 Text("By signing up, you agree to our ")
@@ -131,9 +131,13 @@ extension WelcomeView {
             
             HStack(spacing: 2) {
                 Text("Have an account already? ")
-                +
-                Text("Log in")
-                    .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                
+                NavigationLink {
+                    LoginView()
+                } label: {
+                    Text("Log in")
+                        .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

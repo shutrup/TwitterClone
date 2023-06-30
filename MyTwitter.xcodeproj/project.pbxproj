@@ -46,6 +46,7 @@
 		1573A8CC2A4F20E800163D47 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8CB2A4F20E800163D47 /* RegisterView.swift */; };
 		1573A8CE2A4F222C00163D47 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8CD2A4F222C00163D47 /* CustomAuthTextField.swift */; };
 		1573A8D02A4F23B800163D47 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8CF2A4F23B800163D47 /* SecureAuthTextField.swift */; };
+		1573A8D22A4F2C9700163D47 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8D12A4F2C9700163D47 /* NavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		1573A8CB2A4F20E800163D47 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1573A8CD2A4F222C00163D47 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		1573A8CF2A4F23B800163D47 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
+		1573A8D12A4F2C9700163D47 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,13 +204,13 @@
 			isa = PBXGroup;
 			children = (
 				1573A8C42A4F04CE00163D47 /* Authentication */,
-				151A14292A4DCCD100CB6011 /* Proflle */,
 				151A14022A49DAEE00CB6011 /* Components */,
 				151A13F12A49B70900CB6011 /* Feed */,
 				151A13EE2A49B3D600CB6011 /* Main */,
 				151A13F42A49B71A00CB6011 /* Message */,
 				151A13F32A49B71400CB6011 /* Notification */,
 				151A13FF2A49D5BF00CB6011 /* Post */,
+				151A14292A4DCCD100CB6011 /* Proflle */,
 				151A13F22A49B70C00CB6011 /* Search */,
 			);
 			path = View;
@@ -323,6 +325,7 @@
 				1573A8C72A4F0D2300163D47 /* AuthButton.swift */,
 				1573A8CD2A4F222C00163D47 /* CustomAuthTextField.swift */,
 				1573A8CF2A4F23B800163D47 /* SecureAuthTextField.swift */,
+				1573A8D12A4F2C9700163D47 /* NavBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
 				151A141E2A4B6A9C00CB6011 /* MainView.swift in Sources */,
 				1573A8CA2A4F20C400163D47 /* LoginView.swift in Sources */,
+				1573A8D22A4F2C9700163D47 /* NavBar.swift in Sources */,
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
 				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,

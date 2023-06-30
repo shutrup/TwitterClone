@@ -15,7 +15,9 @@ struct RegisterView: View {
     
     var body: some View {
         VStack {
-            navBar
+            NavBar {
+                dismiss()
+            }
             
             Text("Create your account")
                 .font(.title)
@@ -40,27 +42,6 @@ struct RegisterView_Previews: PreviewProvider {
 }
 
 extension RegisterView {
-    private var navBar: some View {
-        ZStack {
-            HStack {
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Cancel")
-                        .foregroundColor(.blue)
-                }
-                
-                Spacer()
-            }
-            .padding(.horizontal )
-            
-            Image("twitter")
-                .resizable()
-                .scaledToFill()
-                .padding(.trailing)
-                .frame(width: 20, height: 20)
-        }
-    }
     private var textFields: some View {
         VStack(alignment: .leading, spacing: nil) {
             CustomAuthTextField(placeholder: "Name", text: $name)
