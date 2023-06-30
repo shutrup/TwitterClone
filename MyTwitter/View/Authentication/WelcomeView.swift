@@ -9,24 +9,28 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        VStack {
-            twitterLogo
-            
-            Spacer()
-            
-            Text ("See what's happening in the world right now.")
-                .font(.system(size: 30, weight: .heavy, design: .default))
-                .frame(width: getRect().width * 0.9, alignment: .center)
-            
-            Spacer()
-            
-            authButtons
-            
-            dividerOR
-            
-            createAccountButton
-            
-            privacy
+        NavigationView {
+            VStack {
+                twitterLogo
+                
+                Spacer()
+                
+                Text ("See what's happening in the world right now.")
+                    .font(.system(size: 30, weight: .heavy, design: .default))
+                    .frame(width: getRect().width * 0.9, alignment: .center)
+                
+                Spacer()
+                
+                authButtons
+                
+                dividerOR
+                
+                createAccountButton
+                
+                privacy
+            }
+            .navigationBarHidden(true)
+            .navigationBarTitle("")
         }
     }
 }
@@ -84,8 +88,8 @@ extension WelcomeView {
         .padding(.horizontal)
     }
     private var createAccountButton: some View {
-        Button {
-            
+        NavigationLink {
+            RegisterView()
         } label: {
             RoundedRectangle(cornerRadius: 36)
                 .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
