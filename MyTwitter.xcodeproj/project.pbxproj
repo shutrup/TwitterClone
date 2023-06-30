@@ -40,6 +40,8 @@
 		151A14312A4DFCE400CB6011 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14302A4DFCE400CB6011 /* TabButton.swift */; };
 		151A14332A4E079100CB6011 /* View + Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14322A4E079100CB6011 /* View + Exts.swift */; };
 		1573A8C32A4F018800163D47 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8C22A4F018800163D47 /* MainViewModel.swift */; };
+		1573A8C62A4F04F500163D47 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8C52A4F04F500163D47 /* WelcomeView.swift */; };
+		1573A8C82A4F0D2300163D47 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8C72A4F0D2300163D47 /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		151A14302A4DFCE400CB6011 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		151A14322A4E079100CB6011 /* View + Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Exts.swift"; sourceTree = "<group>"; };
 		1573A8C22A4F018800163D47 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1573A8C52A4F04F500163D47 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1573A8C72A4F0D2300163D47 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 		151A13E82A49B28400CB6011 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1573A8C42A4F04CE00163D47 /* Authentication */,
 				151A14292A4DCCD100CB6011 /* Proflle */,
 				151A14022A49DAEE00CB6011 /* Components */,
 				151A13F12A49B70900CB6011 /* Feed */,
@@ -307,6 +312,7 @@
 				151A14252A4C2D5C00CB6011 /* MenuButton.swift */,
 				151A142E2A4DCFB000CB6011 /* BlurView.swift */,
 				151A14302A4DFCE400CB6011 /* TabButton.swift */,
+				1573A8C72A4F0D2300163D47 /* AuthButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -317,6 +323,14 @@
 				151A142C2A4DCCE800CB6011 /* UserProfile.swift */,
 			);
 			path = Proflle;
+			sourceTree = "<group>";
+		};
+		1573A8C42A4F04CE00163D47 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1573A8C52A4F04F500163D47 /* WelcomeView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,12 +464,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				151A14282A4C314000CB6011 /* MenuButtons.swift in Sources */,
+				1573A8C82A4F0D2300163D47 /* AuthButton.swift in Sources */,
 				151A141C2A4B69F300CB6011 /* CustomDivider.swift in Sources */,
 				151A14102A4B0D8B00CB6011 /* SearchBar.swift in Sources */,
 				151A141A2A4B68BF00CB6011 /* TopBar.swift in Sources */,
 				151A14182A4B651C00CB6011 /* MessageCellView.swift in Sources */,
 				151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */,
 				151A140A2A4AFCFC00CB6011 /* SearchCellView.swift in Sources */,
+				1573A8C62A4F04F500163D47 /* WelcomeView.swift in Sources */,
 				1573A8C32A4F018800163D47 /* MainViewModel.swift in Sources */,
 				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
 				151A14202A4B6B3A00CB6011 /* SlideMenu.swift in Sources */,
