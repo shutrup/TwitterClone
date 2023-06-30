@@ -13,6 +13,7 @@ struct UserProfile: View {
     @State var currentTab: String = "Tweets"
     @Namespace var anime
     @State var tabButtonOffset: CGFloat = 0
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -40,6 +41,7 @@ struct UserProfile: View {
                 .zIndex(-offset > 80 ? 0 : 1)
             }
         }
+        .navigationBarBackButtonHidden(true)
         .ignoresSafeArea(.all, edges: .top)
     }
 }
@@ -86,6 +88,18 @@ extension UserProfile {
             
             return AnyView(
                 ZStack {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .zIndex(1)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .imageScale(.large)
+                        .bold()
+                        .padding(.leading, 25)
+                        .padding(.top, 45)
+                        .onTapGesture {
+                            dismiss()
+                        }
+                    
                     Image("banner")
                         .resizable()
                         .aspectRatio(contentMode: .fill)

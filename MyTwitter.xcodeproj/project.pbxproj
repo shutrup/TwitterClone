@@ -39,6 +39,7 @@
 		151A142F2A4DCFB000CB6011 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A142E2A4DCFB000CB6011 /* BlurView.swift */; };
 		151A14312A4DFCE400CB6011 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14302A4DFCE400CB6011 /* TabButton.swift */; };
 		151A14332A4E079100CB6011 /* View + Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A14322A4E079100CB6011 /* View + Exts.swift */; };
+		1573A8C32A4F018800163D47 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8C22A4F018800163D47 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		151A142E2A4DCFB000CB6011 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		151A14302A4DFCE400CB6011 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		151A14322A4E079100CB6011 /* View + Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Exts.swift"; sourceTree = "<group>"; };
+		1573A8C22A4F018800163D47 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		151A13E92A49B28700CB6011 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1573A8C22A4F018800163D47 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				151A14182A4B651C00CB6011 /* MessageCellView.swift in Sources */,
 				151A14122A4B2AE400CB6011 /* SearchUserCellView.swift in Sources */,
 				151A140A2A4AFCFC00CB6011 /* SearchCellView.swift in Sources */,
+				1573A8C32A4F018800163D47 /* MainViewModel.swift in Sources */,
 				151A14062A4AEAC800CB6011 /* TweetCellView.swift in Sources */,
 				151A14202A4B6B3A00CB6011 /* SlideMenu.swift in Sources */,
 				151A14312A4DFCE400CB6011 /* TabButton.swift in Sources */,

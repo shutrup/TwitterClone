@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @State var selectedIndex = 0
-    @State var showCreateTweetView = false
-    @State var text = ""
+    @EnvironmentObject private var vm: MainViewModel
     
     var body: some View {
         VStack {
@@ -19,16 +17,18 @@ struct Home: View {
                 
                 createTweetButton
             }
-            .sheet(isPresented: $showCreateTweetView) {
-                CreateTweetView(text: text)
+            .sheet(isPresented: $vm.showCreateTweetView) {
+                CreateTweetView(text: vm.text)
             }
         }
+        .blur(radius: vm.x == 0 ? 10 : 0)
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+            .environmentObject(MainViewModel())
     }
 }
 
@@ -37,7 +37,7 @@ extension Home {
     private var createTweetButton: some View {
         VStack {
             Button {
-                self.showCreateTweetView.toggle()
+                vm.showCreateTweetView.toggle()
             } label: {
                 Image("twitterPost")
                     .renderingMode(.template)
@@ -58,7 +58,10 @@ extension Home {
         TabView {
             FeedView()
                 .onTapGesture {
-                    self.selectedIndex = 0
+                    withAnimation {
+                        vm.x = -vm.width
+                        vm.selectedIndex = 0
+                    }
                 }
                 .navigationBarHidden(true)
                 .tabItem {
@@ -68,7 +71,10 @@ extension Home {
             
             SearchView()
                 .onTapGesture {
-                    self.selectedIndex = 1
+                    withAnimation {
+                        vm.x = -vm.width
+                        vm.selectedIndex = 1
+                    }
                 }
                 .navigationBarHidden(true)
                 .tabItem {
@@ -78,7 +84,10 @@ extension Home {
             
             NotificationView()
                 .onTapGesture {
-                    self.selectedIndex = 2
+                    withAnimation {
+                        vm.x = -vm.width
+                        vm.selectedIndex = 2
+                    }
                 }
                 .navigationBarHidden(true)
                 .tabItem {
@@ -88,7 +97,10 @@ extension Home {
             
             MessageView()
                 .onTapGesture {
-                    self.selectedIndex = 3
+                    withAnimation {
+                        vm.x = -vm.width
+                        vm.selectedIndex = 3
+                    }
                 }
                 .navigationBarHidden(true)
                 .tabItem {

@@ -12,36 +12,37 @@ struct SlideMenu: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
-        VStack {
-            HStack(spacing: 0) {
-                VStack(alignment: .leading) {
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .clipShape(Circle())
-                    
-                    HStack(alignment: .top, spacing: 12) {
-                        profileDescription
+            VStack {
+                HStack(spacing: 0) {
+                    VStack(alignment: .leading) {
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
                         
-                        Spacer()
+                        HStack(alignment: .top, spacing: 12) {
+                            profileDescription
+                            
+                            Spacer()
+                            
+                            showFooterButton
+                        }
                         
-                        showFooterButton
+                        menuButtons
+                        
+                        createAccountsItems
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, edges?.top == 0 ? 15 : edges?.top)
+                    .padding(.bottom, edges?.bottom == 0 ? 15 : edges?.bottom)
+                    .frame(width: UIScreen.main.bounds.width - 85)
+                    .background(Color.white)
+                    .ignoresSafeArea(.all, edges: .vertical)
                     
-                    menuButtons
-                    
-                    createAccountsItems
+                    Spacer(minLength: 0)
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, edges?.top == 0 ? 15 : edges?.top)
-                .padding(.bottom, edges?.bottom == 0 ? 15 : edges?.bottom)
-                .frame(width: UIScreen.main.bounds.width - 85)
-                .background(Color.white)
-                .ignoresSafeArea(.all, edges: .vertical)
-                
-                Spacer(minLength: 0)
             }
-        }
+            .frame(width: UIScreen.main.bounds.width - 85)
     }
 }
 
