@@ -21,7 +21,7 @@ struct Home: View {
                 CreateTweetView(text: vm.text)
             }
         }
-        .blur(radius: vm.x == 0 ? 10 : 0)
+        .blur(radius: vm.x == 0 ? 5 : 0)
     }
 }
 

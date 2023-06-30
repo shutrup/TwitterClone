@@ -20,6 +20,7 @@ struct MainView: View {
                         Home()
                             .environmentObject(vm)
                     }
+                    .offset(x: vm.x + vm.width)
                     
                     SlideMenu()
                         .onTapGesture {
