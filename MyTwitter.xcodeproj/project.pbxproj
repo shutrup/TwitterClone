@@ -47,6 +47,8 @@
 		1573A8CE2A4F222C00163D47 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8CD2A4F222C00163D47 /* CustomAuthTextField.swift */; };
 		1573A8D02A4F23B800163D47 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8CF2A4F23B800163D47 /* SecureAuthTextField.swift */; };
 		1573A8D22A4F2C9700163D47 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573A8D12A4F2C9700163D47 /* NavBar.swift */; };
+		15BEF2B22A55D38E0021A2C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B12A55D38E0021A2C3 /* User.swift */; };
+		15BEF2B42A55D4440021A2C3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		1573A8CD2A4F222C00163D47 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		1573A8CF2A4F23B800163D47 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
 		1573A8D12A4F2C9700163D47 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		15BEF2B12A55D38E0021A2C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				1573A8C22A4F018800163D47 /* MainViewModel.swift */,
+				15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				151A14272A4C314000CB6011 /* MenuButtons.swift */,
+				15BEF2B12A55D38E0021A2C3 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,9 +516,11 @@
 				1573A8D02A4F23B800163D47 /* SecureAuthTextField.swift in Sources */,
 				151A142D2A4DCCE800CB6011 /* UserProfile.swift in Sources */,
 				151A14332A4E079100CB6011 /* View + Exts.swift in Sources */,
+				15BEF2B22A55D38E0021A2C3 /* User.swift in Sources */,
 				151A14262A4C2D5C00CB6011 /* MenuButton.swift in Sources */,
 				151A13FE2A49B74700CB6011 /* MessageView.swift in Sources */,
 				151A13FC2A49B74000CB6011 /* NotificationView.swift in Sources */,
+				15BEF2B42A55D4440021A2C3 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
