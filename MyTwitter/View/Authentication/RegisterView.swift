@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var vm = AuthViewModel()
+    @EnvironmentObject var vm: AuthViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -36,6 +36,7 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(AuthViewModel())
     }
 }
 

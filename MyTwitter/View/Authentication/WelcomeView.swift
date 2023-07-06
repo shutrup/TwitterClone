@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @StateObject var vm = AuthViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -90,6 +92,7 @@ extension WelcomeView {
     private var createAccountButton: some View {
         NavigationLink {
             RegisterView()
+                .environmentObject(vm)
         } label: {
             RoundedRectangle(cornerRadius: 36)
                 .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
@@ -134,6 +137,7 @@ extension WelcomeView {
                 
                 NavigationLink {
                     LoginView()
+                        .environmentObject(vm)
                 } label: {
                     Text("Log in")
                         .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))

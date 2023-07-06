@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var vm: AuthViewModel
     @Environment(\.dismiss) var dismiss
-    @State var email: String = ""
-    @State var password: String = ""
     
     var body: some View {
         VStack {
@@ -36,6 +35,7 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AuthViewModel())
     }
 }
 
@@ -50,15 +50,15 @@ extension LoginView {
     }
     private var textFields: some View {
         Group {
-            CustomAuthTextField(placeholder: "Phone, email, or username", text: $email)
+            CustomAuthTextField(placeholder: "Phone, email, or username", text: $vm.loginEmail)
             
-            SecureAuthTextField(placeholder: "Password", text: $password)
+            SecureAuthTextField(placeholder: "Password", text: $vm.loginPassword)
         }
     }
     private var loginButton: some View {
         VStack {
             Button {
-                
+                self.vm.login()
             } label: {
                 Capsule()
                     .frame(width: 360, height: 40)
