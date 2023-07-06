@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct APIResponse: Decodable {
+    var user: User
+    var token: String
+}
+
 struct User: Decodable, Identifiable {
     var _id: String
     var id: String {

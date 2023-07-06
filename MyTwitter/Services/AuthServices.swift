@@ -7,15 +7,58 @@
 
 import SwiftUI
 
+enum NetworkError: Error {
+    case invalidError
+    case noData
+    case decodingError
+}
+
+enum AuthenticationError: Error {
+    case invalidCredentials
+    case custom(errorMessage: String)
+}
+
 public class AuthServices {
-    static func makeRequest() {
-        guard let url = URL(string: "http://localhost:3000/users") else {
+    
+    public static var requestDomain = ""
+    
+    static func register(
+        name: String,
+        username: String,
+        email: String,
+        password: String,
+        completion: @escaping (_ result: Result<Data?,AuthenticationError>) -> Void
+    ) {
+        guard let urlString = URL(string: "http://localhost:3000/users") else {
             return
         }
         
+        makeRequest(
+            urlString: urlString,
+            reqBody: [
+                "name": name,
+                "username": username,
+                "email": email,
+                "password": password
+            ])
+        { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure:
+                completion(.failure(.invalidCredentials))
+            }
+        }
+    }
+    
+    static func makeRequest(
+        urlString: URL,
+        reqBody: [String : Any],
+        completion: @escaping (_ result: Result<Data?,NetworkError>) -> Void)
+    {
         let session = URLSession.shared
         
-        var req = URLRequest(url: url)
+        var req = URLRequest(url: urlString)
         req.httpMethod = "POST"
         
         do {
@@ -34,6 +77,7 @@ public class AuthServices {
             }
             
             guard let data = data else {
+                completion(.failure(.noData))
                 return
             }
             
@@ -41,8 +85,8 @@ public class AuthServices {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] {
                     
                 }
-            } catch let error {
-                print(error)
+            } catch {
+                completion(.failure(.decodingError))
             }
         }
             

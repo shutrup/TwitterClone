@@ -10,9 +10,6 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject var vm = AuthViewModel()
     @Environment(\.dismiss) var dismiss
-    @State var name: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
     
     var body: some View {
         VStack {
@@ -45,9 +42,9 @@ struct RegisterView_Previews: PreviewProvider {
 extension RegisterView {
     private var textFields: some View {
         VStack(alignment: .leading, spacing: nil) {
-            CustomAuthTextField(placeholder: "Name", text: $name)
-            CustomAuthTextField(placeholder: "Phone number or Email", text: $email)
-            SecureAuthTextField(placeholder: "Password", text: $password)
+            CustomAuthTextField(placeholder: "Name", text: $vm.name)
+            CustomAuthTextField(placeholder: "Phone number or Email", text: $vm.email)
+            SecureAuthTextField(placeholder: "Password", text: $vm.password)
         }
     }
     private var footer: some View {
@@ -57,7 +54,7 @@ extension RegisterView {
                 .foregroundColor(.gray)
             
             Button {
-                self.vm.register(reqBody: ["username": "shuruppppp", "name": name, "email": email, "password": "12345678"])
+                self.vm.register()
             } label: {
                 Capsule()
                     .frame(width: 60, height: 30)
