@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @StateObject var vm = AuthViewModel()
     @Environment(\.dismiss) var dismiss
     @State var name: String = ""
     @State var email: String = ""
@@ -56,7 +57,7 @@ extension RegisterView {
                 .foregroundColor(.gray)
             
             Button {
-                
+                self.vm.register(reqBody: ["username": "shuruppppp", "name": name, "email": email, "password": "12345678"])
             } label: {
                 Capsule()
                     .frame(width: 60, height: 30)

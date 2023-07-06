@@ -12,7 +12,7 @@ final class AuthViewModel: ObservableObject {
         
     }
     
-    func register() {
+    func register(reqBody: [String : Any]) {
         
     }
     
