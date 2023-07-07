@@ -66,6 +66,47 @@ public class AuthServices {
         }
     }
     
+    static func fetchUser(id: String, completion: @escaping (_ result: Result<Data?,AuthenticationError>) -> Void) {
+        guard let urlString = URL(string: "http://localhost:3000/users/\(id)") else {
+            return
+        }
+        
+        var req = URLRequest(url: urlString)
+        
+        let session = URLSession.shared
+        
+        req.httpMethod = "GET"
+        
+        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: req) { data, res, error in
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.custom(errorMessage: "NoData")))
+                return
+            }
+            
+            completion(.success(data))
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] {
+                    
+                }
+            } catch {
+                completion(.failure(.custom(errorMessage: "Decode Error")))
+            }
+        }
+        
+        task.resume()
+    }
+}
+
+
+extension AuthServices {
     static func makeRequest(urlString: URL, reqBody: [String : Any], completion: @escaping (_ result: Result<Data?,NetworkError>) -> Void) {
         let session = URLSession.shared
         

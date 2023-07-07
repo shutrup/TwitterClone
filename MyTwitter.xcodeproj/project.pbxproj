@@ -50,6 +50,7 @@
 		15BEF2B22A55D38E0021A2C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B12A55D38E0021A2C3 /* User.swift */; };
 		15BEF2B42A55D4440021A2C3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */; };
 		15BEF2B62A56B70C0021A2C3 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B52A56B70C0021A2C3 /* AuthServices.swift */; };
+		15BEF2B92A56FB620021A2C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B82A56FB620021A2C3 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		15BEF2B12A55D38E0021A2C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		15BEF2B52A56B70C0021A2C3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		15BEF2B82A56FB620021A2C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				151A13E92A49B28700CB6011 /* ViewModel */,
 				151A13E82A49B28400CB6011 /* View */,
 				151A13BD2A49AC9B00CB6011 /* MyTwitterApp.swift */,
+				15BEF2B82A56FB620021A2C3 /* ContentView.swift */,
 				151A13C12A49AC9D00CB6011 /* Assets.xcassets */,
 				151A13C32A49AC9D00CB6011 /* MyTwitter.entitlements */,
 				151A13C42A49AC9D00CB6011 /* Preview Content */,
@@ -225,8 +228,8 @@
 		151A13E92A49B28700CB6011 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				15BEF2B72A56D80F0021A2C3 /* Authentication */,
 				1573A8C22A4F018800163D47 /* MainViewModel.swift */,
-				15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,14 @@
 				1573A8C52A4F04F500163D47 /* WelcomeView.swift */,
 				1573A8C92A4F20C400163D47 /* LoginView.swift */,
 				1573A8CB2A4F20E800163D47 /* RegisterView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		15BEF2B72A56D80F0021A2C3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -510,6 +521,7 @@
 				151A14162A4B309D00CB6011 /* NotificationCellView.swift in Sources */,
 				151A14082A4AF1AB00CB6011 /* TweetButton.swift in Sources */,
 				151A13F62A49B72400CB6011 /* FeedView.swift in Sources */,
+				15BEF2B92A56FB620021A2C3 /* ContentView.swift in Sources */,
 				151A141E2A4B6A9C00CB6011 /* MainView.swift in Sources */,
 				1573A8CA2A4F20C400163D47 /* LoginView.swift in Sources */,
 				15BEF2B62A56B70C0021A2C3 /* AuthServices.swift in Sources */,

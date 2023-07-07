@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MyTwitterApp: App {
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            ContentView()
+                .environmentObject(AuthViewModel.shared)
         }
     }
 }

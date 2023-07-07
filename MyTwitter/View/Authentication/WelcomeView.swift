@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @StateObject var vm = AuthViewModel()
+    @EnvironmentObject var vm: AuthViewModel
     
     var body: some View {
         NavigationView {

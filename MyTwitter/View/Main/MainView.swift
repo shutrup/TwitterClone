@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-   @StateObject private var vm = MainViewModel()
+    @StateObject private var vm = MainViewModel()
+//    let user: User
     
     var body: some View {
         NavigationStack {
