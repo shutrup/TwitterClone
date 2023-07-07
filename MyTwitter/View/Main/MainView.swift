@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var vm = MainViewModel()
-//    let user: User
+    let user: User
     
     var body: some View {
         NavigationStack {
@@ -53,6 +53,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(user: User.mockUser)
     }
 }

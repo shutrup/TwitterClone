@@ -12,11 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         if vm.isAuthenticated {
-//            if let user = vm.currentUser {
-//                MainView(user: user)
-//            }
-            
-            MainView()
+            if let user = vm.currentUser {
+                MainView(user: user)
+            }
         }
         else {
             WelcomeView()

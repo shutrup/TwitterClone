@@ -27,3 +27,9 @@ struct User: Decodable, Identifiable {
     var followers: [String]
     var followings: [String]
 }
+
+extension User {
+    static var mockUser: User {
+        User(_id: "1", username: "Shurup", name: "Shurup", email: "shurup@mail.ru", followers: [], followings: [])
+    }
+}
