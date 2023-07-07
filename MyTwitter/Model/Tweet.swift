@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Tweet: Identifiable, Decodable {
+struct Tweet: Identifiable, Decodable, Hashable {
     let _id: String
     var id: String {
         return _id

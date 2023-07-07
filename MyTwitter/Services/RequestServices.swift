@@ -52,4 +52,31 @@ public class RequestServices {
         
         task.resume()
     }
+    
+    static func fetchTweets(completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
+        guard let url = URL(string: requestDomain) else { return }
+        
+        let session = URLSession.shared
+        
+        var req = URLRequest(url: url)
+        req.httpMethod = "GET"
+        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: req) { data, res, error in
+            guard error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            completion(.success(data))
+        }
+        
+        task.resume()
+    }
 }

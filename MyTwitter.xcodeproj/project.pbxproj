@@ -52,6 +52,7 @@
 		157D664C2A58238500E5E0F6 /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D664B2A58238500E5E0F6 /* RequestServices.swift */; };
 		157D664E2A58400100E5E0F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D664D2A58400100E5E0F6 /* ImagePicker.swift */; };
 		157D66502A585BA900E5E0F6 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D664F2A585BA900E5E0F6 /* ImageUploader.swift */; };
+		157D66532A586E5500E5E0F6 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D66522A586E5500E5E0F6 /* FeedViewModel.swift */; };
 		15BEF2B22A55D38E0021A2C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B12A55D38E0021A2C3 /* User.swift */; };
 		15BEF2B42A55D4440021A2C3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */; };
 		15BEF2B62A56B70C0021A2C3 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BEF2B52A56B70C0021A2C3 /* AuthServices.swift */; };
@@ -125,6 +126,7 @@
 		157D664B2A58238500E5E0F6 /* RequestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
 		157D664D2A58400100E5E0F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		157D664F2A585BA900E5E0F6 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		157D66522A586E5500E5E0F6 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		15BEF2B12A55D38E0021A2C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		15BEF2B32A55D4440021A2C3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		15BEF2B52A56B70C0021A2C3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		151A13E92A49B28700CB6011 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				157D66512A586E4A00E5E0F6 /* Feed */,
 				157D66482A58230900E5E0F6 /* PostTweet */,
 				15BEF2B72A56D80F0021A2C3 /* Authentication */,
 				1573A8C22A4F018800163D47 /* MainViewModel.swift */,
@@ -373,6 +376,14 @@
 				157D66492A58231F00E5E0F6 /* CreateTweetViewModel.swift */,
 			);
 			path = PostTweet;
+			sourceTree = "<group>";
+		};
+		157D66512A586E4A00E5E0F6 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				157D66522A586E5500E5E0F6 /* FeedViewModel.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		15BEF2B72A56D80F0021A2C3 /* Authentication */ = {
@@ -548,6 +559,7 @@
 				151A13F02A49B3E300CB6011 /* Home.swift in Sources */,
 				151A13BE2A49AC9B00CB6011 /* MyTwitterApp.swift in Sources */,
 				151A14042A49DB0200CB6011 /* MultilineTextField.swift in Sources */,
+				157D66532A586E5500E5E0F6 /* FeedViewModel.swift in Sources */,
 				157D66472A58228900E5E0F6 /* Tweet.swift in Sources */,
 				1573A8D02A4F23B800163D47 /* SecureAuthTextField.swift in Sources */,
 				151A142D2A4DCCE800CB6011 /* UserProfile.swift in Sources */,

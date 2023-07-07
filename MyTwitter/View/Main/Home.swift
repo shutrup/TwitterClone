@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @EnvironmentObject private var vm: MainViewModel
+    let user: User
     
     var body: some View {
         VStack {
@@ -27,7 +28,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(user: User.mockUser)
             .environmentObject(MainViewModel())
     }
 }
@@ -56,7 +57,7 @@ extension Home {
     
     private var tabView: some View {
         TabView {
-            FeedView()
+            FeedView(user: user)
                 .onTapGesture {
                     withAnimation {
                         vm.x = -vm.width

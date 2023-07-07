@@ -18,7 +18,7 @@ struct MainView: View {
                     VStack {
                         TopBar(x: $vm.x)
                         
-                        Home()
+                        Home(user: user)
                             .environmentObject(vm)
                     }
                     .offset(x: vm.x + vm.width)
