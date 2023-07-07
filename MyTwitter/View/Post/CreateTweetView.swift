@@ -17,6 +17,8 @@ struct CreateTweetView: View {
             headerButtons
             
             MultilineTextField(text: $text)
+            
+            postImage
         }
         .padding()
     }
@@ -52,6 +54,43 @@ extension CreateTweetView {
             .background(Color("bg"))
             .foregroundColor(.white)
             .clipShape(Capsule())
+        }
+    }
+    private var showImagePickerButton: some View {
+        Button {
+            self.vm.showImagePicker.toggle()
+        } label: {
+            Image(systemName: "plus.circle")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                .clipped()
+                .padding(.top)
+                .foregroundColor(.black)
+        }
+        .sheet(isPresented: $vm.showImagePicker, onDismiss: {
+            vm.loadImage()
+        }, content: {
+            ImagePicker(image: $vm.selectedImage)
+        })
+    }
+    @ViewBuilder private var postImage: some View {
+        if vm.postImage == nil {
+            showImagePickerButton
+        } else if let image = vm.postImage {
+            VStack {
+                HStack(alignment: .top) {
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .padding(.horizontal)
+                        .frame(width: vm.width * 0.9)
+                        .cornerRadius(16)
+                        .clipped()
+                }
+                
+                Spacer()
+            }
         }
     }
 }
