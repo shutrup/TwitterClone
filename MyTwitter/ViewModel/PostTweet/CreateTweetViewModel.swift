@@ -18,8 +18,12 @@ final class CreateTweetViewModel: ObservableObject {
         
         RequestServices.requestDomain = "http://localhost:3000/tweets"
         
-        RequestServices.postTweet(text: text, user: user.name, username: user.username, userId: user.id) { result in
-            print(result)
+        RequestServices.postTweet(text: text, user: user.name, username: user.username, userId: user.id) { [weak self] result in
+            if let image = self?.selectedImage {
+                if let id = result?["_id"]! {
+                    ImageUploader.uploadImage(paramName: "upload", fileName: "image1", image: image, urlPath: "/uploadTweetImage/\(id)")
+                }
+            }
         }
     }
     

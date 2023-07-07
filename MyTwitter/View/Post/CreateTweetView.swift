@@ -66,7 +66,7 @@ extension CreateTweetView {
                 .frame(width: 70, height: 70)
                 .clipped()
                 .padding(.top)
-                .foregroundColor(.black)
+                .foregroundColor(Color("bg"))
         }
         .sheet(isPresented: $vm.showImagePicker, onDismiss: {
             vm.loadImage()
