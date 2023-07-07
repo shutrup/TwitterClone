@@ -18,7 +18,7 @@ struct Home: View {
                 createTweetButton
             }
             .sheet(isPresented: $vm.showCreateTweetView) {
-                CreateTweetView(text: vm.text)
+                CreateTweetView(text: vm.text, showCreateTweetView: $vm.showCreateTweetView)
             }
         }
         .blur(radius: vm.x == 0 ? 5 : 0)
