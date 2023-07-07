@@ -19,10 +19,10 @@ final class AuthViewModel: ObservableObject {
     init() {
         let defaults = UserDefaults.standard
         let token = defaults.object(forKey: "jsonwebtoken")
-
+        
         if token != nil {
             self.isAuthenticated = true
-
+            
             if let userId = defaults.object(forKey: "userid") {
                 fetchUser(userId: userId as! String)
                 print("fetched user")
@@ -40,7 +40,7 @@ final class AuthViewModel: ObservableObject {
         AuthServices.login(email: loginEmail, password: loginPassword) { [weak self] result in
             switch result {
             case .success(let data):
-                guard let user = try? JSONDecoder().decode(APIResponse.self, from: data as! Data) else { return }
+                guard let user = try? JSONDecoder().decode(APIResponse.self, from: data!) else { return }
                 
                 DispatchQueue.main.async {
                     defaults.set(user.token, forKey: "jsonwebtoken")

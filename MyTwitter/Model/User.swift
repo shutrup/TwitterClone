@@ -9,7 +9,7 @@ import Foundation
 
 struct APIResponse: Decodable {
     var user: User
-    var token: String
+    var token: String?
 }
 
 struct User: Decodable, Identifiable {
@@ -24,8 +24,8 @@ struct User: Decodable, Identifiable {
     var bio: String?
     var website: String?
     var avatarExists: String?
-    var followers: [String]
-    var followings: [String]
+    var followers: [String]?
+    var followings: [String]?
 }
 
 extension User {
