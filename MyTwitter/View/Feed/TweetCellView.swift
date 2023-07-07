@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCellView: View {
-    var tweet: String
-    var tweetImage: String?
+    @ObservedObject var vm: TweetCellViewModel
+    
+    init(vm: TweetCellViewModel) {
+        self.vm = vm
+    }
     
     var body: some View {
         VStack {
@@ -19,14 +23,13 @@ struct TweetCellView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     userName
                     
-                    Text(tweet)
+                    Text(vm.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
                     
-                    if let image = tweetImage {
-                        userTweetImage(tweetImage: image)
-                            .frame(height: 250)
-                    }
+                    userTweetImage
                 }
+                
+                Spacer()
             }
             
             tweetButtons
@@ -36,7 +39,7 @@ struct TweetCellView: View {
 
 struct TweetCellView_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCellView(tweet: sampleText, tweetImage: "logo")
+        TweetCellView(vm: TweetCellViewModel(tweet: Tweet(_id: "", text: "", userId: "", username: "", user: "", image: "")))
     }
 }
 
@@ -49,20 +52,25 @@ extension TweetCellView {
             .clipShape(Circle())
     }
     private var userName: some View {
-        Text("Serega Pirat ")
+        Text("\(vm.tweet.username) ")
             .fontWeight(.bold)
             .foregroundColor(.primary)
         +
-        Text("@serega_pirat")
+        Text("@\(vm.tweet.username)")
             .foregroundColor(.gray)
     }
-    private func userTweetImage(tweetImage: String) -> some View {
-        GeometryReader { proxy in
-            Image(tweetImage)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: proxy.frame(in: .global).width, height: 250)
-                .cornerRadius(15)
+    @ViewBuilder private var userTweetImage: some View {
+        if let imageId = vm.tweet.id {
+            if vm.tweet.image == "true" {
+                GeometryReader { proxy in
+                    KFImage(URL(string: "http://localhost:3000/tweets/\(imageId)/image"))
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: proxy.frame(in: .global).width, height: 250)
+                        .cornerRadius(15)
+                }
+                .frame(height: 250)
+            }
         }
     }
     private var tweetButtons: some View {

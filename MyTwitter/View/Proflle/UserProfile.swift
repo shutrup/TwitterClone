@@ -221,15 +221,15 @@ extension UserProfile {
     }
     private var tweetList: some View {
         VStack(spacing: 18) {
-            TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "banner")
-            
-            Divider()
-            
-            ForEach(1..<5, id: \.self) { tweet in
-                TweetCellView(tweet: "Hey Tim, are those regular glasses?")
-                
-                Divider()
-            }
+//            TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "banner")
+//            
+//            Divider()
+//            
+//            ForEach(1..<5, id: \.self) { tweet in
+//                TweetCellView(tweet: "Hey Tim, are those regular glasses?")
+//                
+//                Divider()
+//            }
         }
         .padding(.top)
         .zIndex(0)
