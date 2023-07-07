@@ -23,12 +23,7 @@ struct MainView: View {
                     }
                     .offset(x: vm.x + vm.width)
                     
-                    SlideMenu()
-                        .onTapGesture {
-                            withAnimation {
-                                vm.showUserProfile = true
-                            }
-                        }
+                    SlideMenu(vm: AuthViewModel.shared)
                         .shadow(color: Color.black.opacity(vm.x != 0 ? 0.1 : 0), radius: 5, x: 5, y: 0)
                         .offset(x: vm.x)
                         .ignoresSafeArea(.all, edges: .vertical)
@@ -38,9 +33,6 @@ struct MainView: View {
                 }).onEnded({ _ in
                     vm.onEndedGesture()
                 }))
-            }
-            .navigationDestination(isPresented: $vm.showUserProfile) {
-                UserProfile()
             }
             .onDisappear {
                 vm.x = -vm.width

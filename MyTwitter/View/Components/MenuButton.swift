@@ -31,6 +31,6 @@ struct MenuButton: View {
 
 struct MenuButton_Previews: PreviewProvider {
     static var previews: some View {
-        SlideMenu()
+        SlideMenu(vm: AuthViewModel.shared)
     }
 }

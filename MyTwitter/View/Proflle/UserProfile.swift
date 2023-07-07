@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserProfile: View {
+    let user: User
+    
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab: String = "Tweets"
@@ -48,7 +50,7 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        UserProfile(user: User.mockUser)
     }
 }
 
@@ -110,7 +112,7 @@ extension UserProfile {
                         .opacity(blueViewOpacity())
                     
                     VStack(spacing: 5) {
-                        Text("Serega")
+                        Text(user.username)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         
@@ -160,12 +162,12 @@ extension UserProfile {
     }
     private var userDescription: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Serega")
+            Text("\(user.username)")
                 .font(.title2)
                 .bold()
                 .foregroundColor(.primary)
             
-            Text("@serega_pirat")
+            Text("@\(user.username)")
                 .foregroundColor(.gray)
             
             Text("I don't know what I don't know. Items So, I try to figure out what don't know. Founder!")

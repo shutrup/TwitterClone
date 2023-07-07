@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SlideMenu: View {
+    @ObservedObject var vm: AuthViewModel
+    
     @State var showFooter: Bool = false
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
@@ -15,10 +17,14 @@ struct SlideMenu: View {
             VStack {
                 HStack(spacing: 0) {
                     VStack(alignment: .leading) {
-                        Image("logo")
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .clipShape(Circle())
+                        NavigationLink {
+                            UserProfile(user: vm.currentUser!)
+                        } label: {
+                            Image("logo")
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
+                        }
                         
                         HStack(alignment: .top, spacing: 12) {
                             profileDescription
@@ -48,19 +54,23 @@ struct SlideMenu: View {
 
 struct SlideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SlideMenu()
+        SlideMenu(vm: AuthViewModel.shared)
     }
 }
 
 extension SlideMenu {
     private var profileDescription: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Serega")
-                .font(.title3)
-                .bold()
-                .foregroundColor(.black)
+            NavigationLink {
+                UserProfile(user: vm.currentUser!)
+            } label: {
+                Text("\(vm.currentUser?.name ?? "name") ")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.black)
+            }
             
-            Text("@serega_pirat")
+            Text("@\(vm.currentUser?.username ?? "username")")
                 .foregroundColor(.gray)
             
             HStack(spacing: 20) {
