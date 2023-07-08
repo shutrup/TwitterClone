@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct UserProfile: View {
-    let user: User
+    @ObservedObject var vm: ProfileViewModel
+    var user: User
+    
+    init(user: User) {
+        self.user = user
+        self.vm = ProfileViewModel(user: user)
+    }
     
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab: String = "Tweets"
     @Namespace var anime
     @State var tabButtonOffset: CGFloat = 0
+    @State var showEditView: Bool = false
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -148,7 +155,7 @@ extension UserProfile {
     }
     private var editButton: some View {
         Button {
-            
+            self.showEditView.toggle()
         } label: {
             Text("Edit Profile")
                 .foregroundColor(.blue)
@@ -158,6 +165,9 @@ extension UserProfile {
                     Capsule()
                         .stroke(Color.blue, lineWidth: 1.5)
                 )
+        }
+        .sheet(isPresented: $showEditView) {
+            EditProfileView(user: $vm.user)
         }
     }
     private var userDescription: some View {

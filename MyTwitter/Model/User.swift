@@ -17,9 +17,9 @@ struct User: Decodable, Identifiable {
     var id: String {
         return _id
     }
-    let username: String
-    let name: String
-    let email: String
+    var username: String
+    var name: String
+    var email: String
     var location: String?
     var bio: String?
     var website: String?

@@ -9,14 +9,25 @@ import SwiftUI
 import Kingfisher
 
 struct EditProfileView: View {
+    @Binding var user: User
+    @Environment(\.dismiss) var dismiss
+    
     @State var profileImage: Image?
     @State private var selectedImage: UIImage?
     @State var imagePickerPresented: Bool = false
     
-    @State var name = ""
-    @State var location = ""
-    @State var bio = ""
-    @State var website = ""
+    @State var name: String
+    @State var location: String
+    @State var bio: String
+    @State var website: String
+    
+    init(user: Binding<User>) {
+        self._user = user
+        self._name = State(wrappedValue: self._user.name.wrappedValue)
+        self._bio = State(wrappedValue: self._user.bio.wrappedValue ?? "")
+        self._location = State(wrappedValue: self._user.location.wrappedValue ?? "")
+        self._website = State(wrappedValue: self._user.website.wrappedValue ?? "")
+    }
     
     var body: some View {
         VStack {
@@ -33,6 +44,9 @@ struct EditProfileView: View {
                     profileImageAndImagePicker
                     
                     Spacer()
+                }
+                .onAppear {
+                    KingfisherManager.shared.cache.clearCache()
                 }
                 .padding(.top, -25)
                 .padding(.bottom, -10)
@@ -55,7 +69,7 @@ struct EditProfileView: View {
 
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        EditProfileView(user: .constant(User.mockUser))
     }
 }
 
@@ -91,7 +105,7 @@ extension EditProfileView {
     private var editButtons: some View {
         HStack {
             Button {
-                
+                dismiss()
             } label: {
                 Text("Cancel")
                     .foregroundColor(.black)
@@ -101,7 +115,7 @@ extension EditProfileView {
             Spacer()
             
             Button {
-                
+                dismiss()
             } label: {
                 Text("Save")
                     .foregroundColor(.black)
@@ -138,8 +152,10 @@ extension EditProfileView {
                         Image(systemName: "person")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 75, height: 75)
+                            .frame(width: 65, height: 65)
+                            .foregroundColor(.black)
                             .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
                     }
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 75, height: 75)
