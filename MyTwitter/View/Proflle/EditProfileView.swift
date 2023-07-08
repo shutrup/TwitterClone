@@ -10,6 +10,7 @@ import Kingfisher
 
 struct EditProfileView: View {
     @Binding var user: User
+    @ObservedObject var vm: EditProfileViewModel
     @Environment(\.dismiss) var dismiss
     
     @State var profileImage: Image?
@@ -23,6 +24,7 @@ struct EditProfileView: View {
     
     init(user: Binding<User>) {
         self._user = user
+        self.vm = EditProfileViewModel(user: self._user.wrappedValue)
         self._name = State(wrappedValue: self._user.name.wrappedValue)
         self._bio = State(wrappedValue: self._user.bio.wrappedValue ?? "")
         self._location = State(wrappedValue: self._user.location.wrappedValue ?? "")
@@ -115,6 +117,7 @@ extension EditProfileView {
             Spacer()
             
             Button {
+                vm.save(name: name, bio: bio, location: location, website: website)
                 dismiss()
             } label: {
                 Text("Save")
