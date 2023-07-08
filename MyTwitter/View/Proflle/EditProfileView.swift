@@ -66,6 +66,16 @@ struct EditProfileView: View {
             
             Spacer()
         }
+        .onReceive(vm.$uploadComplete, perform: { complete in
+            if complete {
+                dismiss()
+                
+                self.user.name = vm.user.name
+                self.user.bio = vm.user.bio
+                self.user.location = vm.user.location
+                self.user.website = vm.user.website
+            }
+        })
     }
 }
 
@@ -118,7 +128,7 @@ extension EditProfileView {
             
             Button {
                 vm.save(name: name, bio: bio, location: location, website: website)
-                dismiss()
+//                dismiss()
             } label: {
                 Text("Save")
                     .foregroundColor(.black)
