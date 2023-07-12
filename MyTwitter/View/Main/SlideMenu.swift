@@ -126,10 +126,10 @@ extension SlideMenu {
             .padding(.top, 20)
             
             Button {
-                
+                vm.logout()
             } label: {
-                Text("Help centre")
-                    .foregroundColor(.black)
+                Text("Exit")
+                    .foregroundColor(.red)
             }
             .padding(.top, 20)
             

@@ -10,6 +10,9 @@ import Kingfisher
 
 struct UserProfile: View {
     @ObservedObject var vm: ProfileViewModel
+    var isCurrentUser: Bool {
+        return vm.user.isCurrentUser ?? false
+    }
     var user: User
     
     init(user: User) {
@@ -161,22 +164,39 @@ extension UserProfile {
             .offset(y: offset < 0 ? getOffset() - 20 : -20)
             .scaleEffect(getScaleForLogo())
     }
-    private var editButton: some View {
-        Button {
-            self.showEditView.toggle()
-        } label: {
-            Text("Edit Profile")
-                .foregroundColor(.blue)
-                .padding(.vertical, 10)
-                .padding(.horizontal)
-                .background(
-                    Capsule()
-                        .stroke(Color.blue, lineWidth: 1.5)
-                )
-        }
-        .sheet(isPresented: $showEditView) {
-            EditProfileView(user: $vm.user)
-        }
+   @ViewBuilder private var editButton: some View {
+       if isCurrentUser {
+           Button {
+               self.showEditView.toggle()
+           } label: {
+               Text("Edit Profile")
+                   .foregroundColor(.blue)
+                   .padding(.vertical, 10)
+                   .padding(.horizontal)
+                   .background(
+                       Capsule()
+                           .stroke(Color.blue, lineWidth: 1.5)
+                   )
+           }
+           .sheet(isPresented: $showEditView) {
+               EditProfileView(user: $vm.user)
+           }
+       } else {
+           Button {
+               
+           } label: {
+               Text("Follow")
+                   .foregroundColor(.white)
+                   .padding(.vertical, 10)
+                   .padding(.horizontal)
+                   .background {
+                       ZStack {
+                           Capsule()
+                               .foregroundColor(.black)
+                       }
+                   }
+           }
+       }
     }
     private var userDescription: some View {
         HStack {
