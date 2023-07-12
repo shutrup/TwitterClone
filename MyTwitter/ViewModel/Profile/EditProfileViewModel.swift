@@ -27,6 +27,15 @@ final class EditProfileViewModel: ObservableObject {
         self.user.website = userNewWebsite
     }
     
+    func uploadProfileImage(text: String, image: UIImage?) {
+        guard let user = AuthViewModel.shared.currentUser else { return }
+        let urlPath = "/users/me/avatar"
+        if let image = image {
+            ImageUploader.uploadImage(paramName: "avatar", fileName: "image1", image: image, urlPath: urlPath)
+        }
+        
+    }
+    
     func uploadUserData(name: String?, bio: String?, location: String?, website: String?) {
         let userID = user.id
         let urlPath = "/users/\(userID)"

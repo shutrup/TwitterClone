@@ -127,7 +127,13 @@ extension EditProfileView {
             Spacer()
             
             Button {
-                vm.uploadUserData(name: name, bio: bio, location: location, website: website)
+                if (selectedImage != nil) {
+                    vm.uploadProfileImage(text: "text", image: selectedImage)
+                    vm.uploadUserData(name: name, bio: bio, location: location, website: website)
+                    KingfisherManager.shared.cache.clearCache()
+                } else {
+                    vm.uploadUserData(name: name, bio: bio, location: location, website: website)
+                }
             } label: {
                 Text("Save")
                     .foregroundColor(.black)
