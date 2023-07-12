@@ -103,6 +103,7 @@ public class AuthServices {
         
         task.resume()
     }
+    
 }
 
 
@@ -122,6 +123,46 @@ extension AuthServices {
         
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: req) { data, res, error in
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            completion(.success(data))
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] {
+                    
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }
+        
+        task.resume()
+    }
+    static func makePathRequestWithAuth(urlString: URL, reqBody: [String : Any], completion: @escaping (_ result: Result<Data?,NetworkError>) -> Void) {
+        let session = URLSession.shared
+        
+        var req = URLRequest(url: urlString)
+        req.httpMethod = "PATCH"
+        
+        do {
+            req.httpBody = try JSONSerialization.data(withJSONObject: reqBody, options: .prettyPrinted)
+        } catch let error {
+            print(error)
+        }
+        
+        let token = UserDefaults.standard.string(forKey: "jsonwebtoken")!
+        req.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = session.dataTask(with: req) { data, res, error in
             guard error == nil else {

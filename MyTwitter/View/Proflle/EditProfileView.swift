@@ -127,8 +127,7 @@ extension EditProfileView {
             Spacer()
             
             Button {
-                vm.save(name: name, bio: bio, location: location, website: website)
-//                dismiss()
+                vm.uploadUserData(name: name, bio: bio, location: location, website: website)
             } label: {
                 Text("Save")
                     .foregroundColor(.black)

@@ -25,6 +25,18 @@ final class EditProfileViewModel: ObservableObject {
         self.user.bio = userNewBio
         self.user.location = userNewLocation
         self.user.website = userNewWebsite
-        self.uploadComplete.toggle()
+    }
+    
+    func uploadUserData(name: String?, bio: String?, location: String?, website: String?) {
+        let userID = user.id
+        let urlPath = "/users/\(userID)"
+        let url = URL(string: "http://localhost:3000\(urlPath)")!
+        
+        AuthServices.makePathRequestWithAuth(urlString: url, reqBody: ["name": name, "bio": bio, "location": location, "website": website]) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.save(name: name, bio: bio, location: location, website: website)
+                self?.uploadComplete.toggle()
+            }
+        }
     }
 }
