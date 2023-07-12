@@ -23,13 +23,13 @@ struct User: Decodable, Identifiable {
     var location: String?
     var bio: String?
     var website: String?
-    var avatarExists: String?
+    var avatarExists: Bool?
     var followers: [String]?
     var followings: [String]?
 }
 
 extension User {
     static var mockUser: User {
-        User(_id: "1", username: "Shurup", name: "Shurup", email: "shurup@mail.ru", followers: [], followings: [])
+        User(_id: "1", username: "Shurup", name: "Shurup", email: "shurup@mail.ru", location: "fasdfasdfads", website: "fasdfasd" , followers: [], followings: [])
     }
 }

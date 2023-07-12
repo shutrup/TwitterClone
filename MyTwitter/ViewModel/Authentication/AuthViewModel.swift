@@ -70,7 +70,10 @@ final class AuthViewModel: ObservableObject {
         AuthServices.fetchUser(id: userId) { [weak self] result in
             switch result {
             case .success(let data):
-                guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
+                guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
+                    print("DECODER ERROR")
+                    return                    
+                }
                 
                 DispatchQueue.main.async {
                     UserDefaults.standard.setValue(user.id, forKey: "userid")

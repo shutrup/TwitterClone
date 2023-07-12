@@ -164,7 +164,7 @@ extension EditProfileView {
             Button {
                 self.imagePickerPresented.toggle()
             } label: {
-                KFImage(URL(string: "http://localhost:3000/users/id/avatar"))
+                KFImage(URL(string: "http://localhost:3000/users/\(vm.user.id)/avatar"))
                     .resizable()
                     .placeholder {
                         Image(systemName: "person")

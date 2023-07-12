@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserProfile: View {
     @ObservedObject var vm: ProfileViewModel
@@ -140,7 +141,14 @@ extension UserProfile {
         .zIndex(1)
     }
     private var userLogo: some View {
-        Image("logo")
+        KFImage(URL(string: "http://localhost:3000/users/\(vm.user.id)/avatar"))
+            .placeholder({
+                Image("logo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 75, height: 75)
+                    .clipShape(Circle())
+            })
             .resizable()
             .scaledToFill()
             .frame(width: 75, height: 75)
@@ -171,35 +179,70 @@ extension UserProfile {
         }
     }
     private var userDescription: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("\(user.username)")
-                .font(.title2)
-                .bold()
-                .foregroundColor(.primary)
-            
-            Text("@\(user.username)")
-                .foregroundColor(.gray)
-            
-            Text("I don't know what I don't know. Items So, I try to figure out what don't know. Founder!")
-            
-            HStack(spacing: 16) {
-                FollowView(count: 13, title: "Followers")
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\(vm.user.username)")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.primary)
                 
-                FollowView(count: 680, title: "Following")
-            }
-        }
-        .overlay (
-            GeometryReader { proxy -> Color in
-                let minY = proxy.frame(in: .global).minY
+                Text("@\(vm.user.username)")
+                    .foregroundColor(.gray)
                 
-                DispatchQueue.main.async {
-                    self.titleOffset = minY
+                Text(vm.user.bio ?? "I don't know what I don't know. Items So, I try to figure out what don't know. Founder!")
+                
+                HStack(spacing: 8) {
+                    if let userLocation = vm.user.location {
+                        if (userLocation != "") {
+                            HStack(spacing: 2) {
+                                Image(systemName: "mappin.circle.fill")
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.gray)
+                                    
+                                Text(userLocation)
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 14))
+                            }
+                        }
+                    }
+                    
+                    if let userWebsite = vm.user.website {
+                        if (userWebsite != "") {
+                            HStack(spacing: 2) {
+                                Image(systemName: "link")
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.gray)
+                                    
+                                Text(userWebsite)
+                                    .foregroundColor(Color("bg"))
+                                    .font(.system(size: 14))
+                            }
+                        }
+                    }
                 }
                 
-                return Color.clear
+                HStack(spacing: 16) {
+                    FollowView(count: vm.user.followers?.count ?? 0, title: "Followers")
+                    
+                    FollowView(count: vm.user.followings?.count ?? 0, title: "Following")
+                }
             }
-            .frame(width: 0, height: 0), alignment: .top
-        )
+            .padding(.leading, 8)
+            .overlay (
+                GeometryReader { proxy -> Color in
+                    let minY = proxy.frame(in: .global).minY
+                    
+                    DispatchQueue.main.async {
+                        self.titleOffset = minY
+                    }
+                    
+                    return Color.clear
+                }
+                .frame(width: 0, height: 0), alignment: .top
+            )
+            
+            Spacer()
+        }
     }
     private var tabButtons: some View {
         VStack(spacing: 0) {
@@ -233,15 +276,11 @@ extension UserProfile {
     }
     private var tweetList: some View {
         VStack(spacing: 18) {
-//            TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "banner")
-//            
-//            Divider()
-//            
-//            ForEach(1..<5, id: \.self) { tweet in
-//                TweetCellView(tweet: "Hey Tim, are those regular glasses?")
-//                
-//                Divider()
-//            }
+            ForEach(vm.tweets, id: \.self) { tweet in
+                TweetCellView(vm: TweetCellViewModel(tweet: tweet))
+                
+                Divider()
+            }
         }
         .padding(.top)
         .zIndex(0)
