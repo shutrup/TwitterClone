@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SlideMenu: View {
     @ObservedObject var vm: AuthViewModel
@@ -20,7 +21,13 @@ struct SlideMenu: View {
                         NavigationLink {
                             UserProfile(user: vm.currentUser!)
                         } label: {
-                            Image("logo")
+                            KFImage(URL(string: "http://localhost:3000/users/\(vm.currentUser!.id)/avatar"))
+                                .placeholder {
+                                    Image("logo")
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                        .clipShape(Circle())
+                                }
                                 .resizable()
                                 .frame(width: 60, height: 60)
                                 .clipShape(Circle())

@@ -44,12 +44,26 @@ struct TweetCellView_Previews: PreviewProvider {
 }
 
 extension TweetCellView {
-    private var logo: some View {
-        Image("logo")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 55, height: 55)
-            .clipShape(Circle())
+   @ViewBuilder private var logo: some View {
+        if let user = vm.user {
+            NavigationLink {
+                UserProfile(user: user)
+            } label: {
+                KFImage(URL(string: "http://localhost:3000/users/\(vm.tweet.userId)/avatar"))
+                    .placeholder {
+                        Image("logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 55, height: 55)
+                            .clipShape(Circle())
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 55, height: 55)
+                    .clipShape(Circle())
+            }
+        }
+
     }
     private var userName: some View {
         Text("\(vm.tweet.username) ")
